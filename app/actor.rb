@@ -1,5 +1,6 @@
 class Actor
-    attr_reader :idx, :x, :y, :w, :h, :sprite, :history
+    attr_accessor :x, :y
+    attr_reader :idx, :w, :h, :sprite, :history
 
 
     @@idx_file = 0
@@ -11,6 +12,8 @@ class Actor
         @y = 0
         @w = 32
         @h = 32
+        @w_half = @w / 2
+        @h_half = @h / 2
         @sprite = {x: 0, y: 0, w: 32, h: 32, path: 'sprites/circle/red.png'}
         # Could be RAM abusive and may need to be offloaded or purge old
         # data after size gets to large.
